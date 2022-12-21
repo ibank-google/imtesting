@@ -91,7 +91,7 @@ const enemy = new Sprite({
   },
   color: 'blue',
   offset: {
-    x: -50,
+    x: 50,
     y: 0,
   },
 })
@@ -117,6 +117,9 @@ const keys = {
     pressed: false,
   },
   ArrowUp: {
+    pressed: false,
+  },
+  ArrowDown: {
     pressed: false,
   },
 }
@@ -161,7 +164,6 @@ function animate() {
     player.isAttacking
   ) {
     enemy.isAttacking = false
-    console.log('G')
   }
 
   if (
@@ -169,7 +171,6 @@ function animate() {
     player.isAttacking
   ) {
     enemy.isAttacking = false
-    console.log('G2')
   }
 }
 
@@ -235,6 +236,9 @@ window.addEventListener('keyup', (event) => {
       break
     case 'ArrowUp':
       keys.ArrowUp.pressed = false
+      break
+    case 'ArrowDown':
+      enemy.attack()
       break
   }
 })
