@@ -210,7 +210,7 @@ window.addEventListener('keydown', (event) => {
       enemy.velocity.y = -10
       break
     case 'ArrowDown':
-      enemy.isAttacking = true
+      enemy.attack()
       break
   }
 })
@@ -236,9 +236,6 @@ window.addEventListener('keyup', (event) => {
       break
     case 'ArrowUp':
       keys.ArrowUp.pressed = false
-      break
-    case 'ArrowDown':
-      enemy.attack()
       break
   }
 })
